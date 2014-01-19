@@ -1,7 +1,7 @@
 Indexed HashSet
 ===============
 
-This is like a cross between a HashMap and a HashSet. The approach when done well[^1] is a really memory-efficient way
+This is like a cross between a HashMap and a HashSet. The approach when done well[1] is a really memory-efficient way
 of storing objects, indexed by one of their properties. Typically, most people do this using a HashMap, but that's
 inefficient because...
 
@@ -35,7 +35,7 @@ that adds up. With an IndexedHashSet, you don't have any of that overhead.
 Additionally, an IndexedHashSet can handle returning multiple records for a given value. So in the example above, you
 could just as easily store them indexed by their age and it'll happily happily return lists of Employees for a given age.
 
-[^1] The implementation I've written here was purely so I could play around with the approach of minimising memory use
+[1] The implementation I've written here was purely so I could play around with the approach of minimising memory use
     per object. I've been lazy in other areas (e.g. using a Set for hashslots) because optimising those areas wasn't
     what I was interested in. Maybe I'll revisit it some day.
 
