@@ -18,7 +18,7 @@ described as dynamic programming, but it seems too simple for such a grandiose n
 way, way faster.
 
 It's still fairly heavy on the recursion though, and as a result can hit stack overflow on large lists. I have a
-non-recursive approach in mind that would have negligible heap and stack impact, and also be alittle more
+non-recursive approach in mind that would have negligible heap and stack impact, and also be a little more
 performant still, but I've already spent way more time than is healthy on this.
 
 Interesting problem though.
