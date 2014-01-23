@@ -48,8 +48,8 @@ public class PerformanceTest
 
     private int[] buildRandomArray(int length)
     {
-        int[] numbersToCheck = new int[length];
-        Arrays.setAll(numbersToCheck, (int i) -> (int) (Math.random() * length));
-        return numbersToCheck;
+        int[] reult = new int[length];
+        Arrays.setAll(reult, (int i) -> (int) (Math.random() * length));
+        return reult;
     }
 }
