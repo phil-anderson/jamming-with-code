@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Random;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
@@ -9,6 +10,7 @@ import static org.hamcrest.core.Is.is;
 public class BTreeNodeTest
 {
     private static final int LARGE_TREE_SIZE = 10000;
+    private Random random;
 
     private BTreeNode sampleTree;
 
@@ -27,6 +29,11 @@ public class BTreeNodeTest
         sampleTree.add(8);
         sampleTree.add(9);
         sampleTree.add(6);
+
+        // Useful to know seed in order to be able to reproduce failing tests
+        long seed = System.currentTimeMillis();
+        System.out.println("Random seed: " + seed);
+        random = new Random();
     }
 
     @Test
@@ -128,14 +135,10 @@ public class BTreeNodeTest
     {
         BTreeNode root = new BTreeNode(LARGE_TREE_SIZE / 2);
         for(int i=1; i<100; i++) {
-            root.add(randNum(LARGE_TREE_SIZE));
+            root.add(random.nextInt());
         }
 
         assertListIsInOrder(root.sortedValues());
-    }
-
-    private static int randNum(int max) {
-        return (int) (Math.random()*(max + 1));
     }
 
     private void assertSortedValuesAre(int... values)
@@ -152,7 +155,7 @@ public class BTreeNodeTest
     {
         for(int i=1; i<listToCheck.size(); i++)
         {
-            assertThat(listToCheck.get(i) > listToCheck.get(i - 1), is(true));
+            assertThat(listToCheck.get(i) >= listToCheck.get(i - 1), is(true));
         }
     }
 }

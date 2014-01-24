@@ -6,14 +6,14 @@ import java.awt.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class UniqueRouteCounterTest
+public class UniqueRouteCounter2Test
 {
-    private UniqueRouteCounter testCandidate;
+    private UniqueRouteCounter2 testCandidate;
 
     @Before
     public void setUp()
     {
-        testCandidate = new UniqueRouteCounter();
+        testCandidate = new UniqueRouteCounter2();
     }
 
     @Test(expected=IllegalArgumentException.class)
@@ -39,7 +39,7 @@ public class UniqueRouteCounterTest
     {
         assertThat(getRouteCountBetween(10, 10,  11, 10), is(1));
         assertThat(getRouteCountBetween(10, 10,  10, 11), is(1));
-        assertThat(getRouteCountBetween(10, 10,  11, 11), is(2));
+        assertThat(getRouteCountBetween(10, 10, 11, 11), is(2));
     }
 
     @Test

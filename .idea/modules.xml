@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/indexed-hashset-impl/indexed-hashset-impl.iml" filepath="$PROJECT_DIR$/indexed-hashset-impl/indexed-hashset-impl.iml" group="all" />
       <module fileurl="file://$PROJECT_DIR$/max-non-contiguous-subset/max-non-contiguous-subset.iml" filepath="$PROJECT_DIR$/max-non-contiguous-subset/max-non-contiguous-subset.iml" group="all" />
       <module fileurl="file://$PROJECT_DIR$/number-of-routes/number-of-routes.iml" filepath="$PROJECT_DIR$/number-of-routes/number-of-routes.iml" group="all" />
+      <module fileurl="file://$PROJECT_DIR$/number-of-routes-revisited/number-of-routes-revisited.iml" filepath="$PROJECT_DIR$/number-of-routes-revisited/number-of-routes-revisited.iml" group="all" />
       <module fileurl="file://$PROJECT_DIR$/quicksort/quicksort.iml" filepath="$PROJECT_DIR$/quicksort/quicksort.iml" group="all" />
     </modules>
   </component>
