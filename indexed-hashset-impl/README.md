@@ -35,10 +35,10 @@ that adds up. With an IndexedHashSet, you don't have any of that overhead.
 Additionally, an IndexedHashSet can handle returning multiple records for a given value. So in the example above, you
 could just as easily store them indexed by their age and it'll happily happily return lists of Employees for a given age.
 
-[1] The implementation I've written here was purely so I could play around with the approach of minimising memory use
+_[1] The implementation I've written here was purely so I could play around with the approach of minimising memory use
     per object. I've been lazy in other areas (e.g. using a Set for hashslots) because optimising those areas wasn't
-    what I was interested in. Maybe I'll revisit it some day.
+    what I was interested in. Maybe I'll revisit it some day._
 
-[2] I haven't included the reference to the value as that's required, and the reference to the next node which is part
+_[2] I haven't included the reference to the value as that's required, and the reference to the next node which is part
     of HashMap's hash-conflict implementation (although IMO there are more memory efficient ways of handling those
-    too).
+    too)._
