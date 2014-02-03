@@ -4,6 +4,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThan;
 
 public class IndexedHashSetTest
 {
@@ -55,7 +56,7 @@ public class IndexedHashSetTest
         assertThat(indexedSet.getSizeOfBackingStore(), is(2));
 
         populateWithDummyData(indexedSet, 100);
-        assertThat(indexedSet.getSizeOfBackingStore() > 2, is(true));
+        assertThat(indexedSet.getSizeOfBackingStore(), greaterThan(2));
     }
 
     @Test

@@ -5,6 +5,7 @@ import java.util.Random;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.lessThanOrEqualTo;
 
 public class AbstractHeapTest
 {
@@ -65,7 +66,7 @@ public class AbstractHeapTest
         int value = testCandidate.pop();
         while(!testCandidate.isEmpty())
         {
-            assertThat(testCandidate.pop() <= value, is(true));
+            assertThat(testCandidate.pop(), lessThanOrEqualTo(value));
         }
     }
 

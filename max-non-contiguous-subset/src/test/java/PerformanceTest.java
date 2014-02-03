@@ -5,10 +5,11 @@ import java.util.Arrays;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.lessThan;
 
 public class PerformanceTest
 {
-    // Somewhat inexact as doesn't take GC's into account, doesn;t do JIT compiler warm-up etc. etc.
+    // Somewhat inexact as doesn't take GC's into account, doesn't do JIT compiler warm-up etc. etc.
     // Empirical performance testing in Java is really hard and not in scope here... A good project
     // for another time perhaps. This ought to be good enough for now.
     @Test
@@ -28,7 +29,7 @@ public class PerformanceTest
         long morePerformantDuration = System.currentTimeMillis() - startTime;
 
         assertThat(morePerformantResult, is(equalTo(standardResult)));
-        assertThat(morePerformantDuration < standardDuration, is(true));
+        assertThat(morePerformantDuration, lessThan(standardDuration));
 
         System.out.println("Standard approach:        " + standardDuration + "ms");
         System.out.println("More performant approach: " + morePerformantDuration + "ms");
@@ -41,8 +42,8 @@ public class PerformanceTest
         MaxSubsetSumMorePerformant testCandidate = new MaxSubsetSumMorePerformant();
         long startTime = System.currentTimeMillis();
         testCandidate.largestNonContiguousSum(numbersToCheck);
-        long duration = System.currentTimeMillis() - startTime;
-        assertThat(duration < 50, is(true));
+        int duration = (int) (System.currentTimeMillis() - startTime);
+        assertThat(duration, lessThan(50));
         System.out.println("Large array:              " + duration + "ms");
     }
 

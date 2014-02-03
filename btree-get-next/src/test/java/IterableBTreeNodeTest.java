@@ -9,7 +9,8 @@ public class IterableBTreeNodeTest
     @Test
     public void returnsNullIfNoNextNode()
     {
-        assertThat(new IterableBTreeNode(1).getNext(), is(nullValue()));
+        IterableBTreeNode shouldBeNull = new IterableBTreeNode(1).getNext();
+        assertThat(shouldBeNull, is(nullValue()));
     }
 
     @Test

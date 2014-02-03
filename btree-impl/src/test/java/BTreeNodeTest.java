@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.hamcrest.core.Is.is;
 
 public class BTreeNodeTest
@@ -153,9 +154,12 @@ public class BTreeNodeTest
 
     private void assertListIsInOrder(List<Integer> listToCheck)
     {
+        Integer previous = listToCheck.get(0);
         for(int i=1; i<listToCheck.size(); i++)
         {
-            assertThat(listToCheck.get(i) >= listToCheck.get(i - 1), is(true));
+            Integer current = listToCheck.get(i);
+            assertThat(current, greaterThanOrEqualTo(previous));
+            previous = current;
         }
     }
 }
